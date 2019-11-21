@@ -36,6 +36,10 @@ void driver::SoftStop(int multi){send(CMD_STOP_SOFT, 0, multi);}
 void driver::HardStop(int multi){send(CMD_STOP_HARD, 0, multi);}
 void driver::SoftHiz (int multi){send(CMD_STOP_SHIZ, 0, multi);}
 void driver::HardHiz (int multi){send(CMD_STOP_HHIZ, 0, multi);}
+void driver::goHome	 (int multi){send(CMD_GO_HOME, 0, multi);}
+void driver::goMark  (int multi){send(CMD_GO_MARK, 0, multi);}
+void driver::resetPos(int multi){send(CMD_RESET_POS, 0, multi);}
+
 
 /*================Setting Methods================*/
 
@@ -43,6 +47,8 @@ void driver::voltage_hold(long volt, int multi) {send(CMD_KVAL_HOLD, volt, multi
 void driver::voltage_run (long volt, int multi) {send(CMD_KVAL_RUN, volt, multi);}
 void driver::voltage_acc (long volt, int multi) {send(CMD_KVAL_ACC, volt, multi);}
 void driver::voltage_dec (long volt, int multi) {send(CMD_KVAL_DEC, volt, multi);}
+void driver::setAcc(long acc, int multi = 0x0){send(CMD_ACCEL, acc, multi);}
+void driver::setDec(long dec, int multi = 0x0) { send(CMD_DECEL, dec, multi); }
 void driver::setMaxSpeed(int speed, int multi) {send(CMD_MAXSPD, speed, multi);}
 void driver::setMinSpeed(int speed, int multi) {send(CMD_MINSPD, speed, multi);}
 void driver::setStepMode(int mode, int multi) {send(CMD_STEPMODE, mode, multi);}

@@ -28,11 +28,10 @@ namespace l6470duino
 		void HardStop	(int multi = 0x0);
 		void SoftHiz	(int multi = 0x0);
 		void HardHiz	(int multi = 0x0);
-		/*
-			.
-			.
-			.
-		*/
+		void goHome		(int multi = 0x0);
+		void goMark		(int multi = 0x0);
+		void resetPos	(int multi = 0x0);
+
 
 		/*=======Setting Methods=======*/
 		void voltage_hold(long volt, int multi = 0x0);
@@ -42,11 +41,8 @@ namespace l6470duino
 		void setMaxSpeed(int speed, int multi = 0x0);
 		void setMinSpeed(int speed, int multi = 0x0);
 		void setStepMode(int mode, int multi = 0x0);
-		/*
-			.
-			.
-			.
-		*/
+		void setAcc(long mode, int multi = 0x0);
+		void setDec(long mode, int multi = 0x0);
 
 		/*=======Hardware dependences=======*/
 		bool isBusy();
